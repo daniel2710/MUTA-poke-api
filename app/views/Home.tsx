@@ -38,7 +38,7 @@ const Home = ({ data }: Props) => {
           height={100}
           unoptimized
         />
-        {data?.results?.length === 0 ? (
+        {filteredResults.length === 0 ? (
           <div className="relative z-50 mt-10 mx-5">
             <p className="text-white">No hay resultados, intente más tarde.</p>
           </div>
@@ -50,7 +50,7 @@ const Home = ({ data }: Props) => {
         )
         }
       </section>
-      {!search && (
+      {!search && filteredResults.length > 0 && (
         <footer className="relative z-50 mt-8 mx-5 xl:mt-14"> 
           <Pagination
             data={data}
